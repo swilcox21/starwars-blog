@@ -1,3 +1,113 @@
-/* 
-    General Styles
-*/
+@import "~bootstrap/scss/bootstrap.scss";
+body {
+    background-image: url("https://scx2.b-cdn.net/gfx/news/2018/studyofdista.jpg");
+    // background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+.scrollbar::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+#myNavBar {
+    padding-left: 200px;
+    padding-right: 200px;
+    background-color: rgba(65, 64, 64, 0);
+}
+
+.myCardsContainer {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.scrollbar {
+    overflow-x: scroll;
+}
+
+.card-body{
+    background-color: rgb(65, 64, 64);
+}
+
+// .navbar-brand {
+//      font-family: Impact, sans-serif;
+//      font-size: 32px;
+// }
+
+.card-title:hover {
+    cursor: pointer;
+    color: rgb(255, 196, 0);
+}
+
+.learnMore {
+    // border: 2px solid blue;
+    border-radius: 5px;
+    background: rgba(119, 229, 248, 0);
+    color: rgb(255, 196, 0);
+    padding: 6px;
+    font-weight: bold;
+}
+
+.learnMore:hover {
+    border: 2px solid rgb(255, 196, 0);
+    border-radius: 5px;
+    background: rgb(255, 196, 0);
+    color: rgb(65, 64, 64);
+    font-weight: bold;
+}
+
+.heart {
+    // border: 1px solid rgb(255, 196, 0);
+    border-radius: 5px;
+    background: rgba(247, 238, 152, 0);
+    color: rgb(255, 196, 0);
+}
+
+.heart:hover {
+    border: 2px solid rgb(255, 196, 0);
+    border-radius: 5px;
+    background: rgb(255, 196, 0);
+    color: rgb(65, 64, 64);
+    font-weight: bold;
+}
+
+// .dropdown-toggle {
+//     // border: 2px solid blue;
+//     border-radius: 5px;
+//     background: rgba(119, 229, 248, 0);
+//     color: rgb(255, 196, 0);
+//     padding: 6px;
+//     font-weight: bold;
+// }
+// .dropdown-toggle:hover {
+//     border: 2px solid blue;
+//     border-radius: 5px;
+//     background: blue;
+//     color: white;
+//     font-weight: bold;
+// }
+
+h1 {
+    color: rgb(255, 196, 0);
+}
+// .navbar-brand {
+//     cursor: pointer;
+//     color: yellow;
+// }
+
+// .navbar-brand:hover {
+//     color: rgb(255, 196, 0);
+//     border: none;
+// }
+
+.details-background {
+    background-color: rgb(65, 64, 64);
+}
