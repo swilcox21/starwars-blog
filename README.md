@@ -1,3 +1,45 @@
+
+
+# Star Wars Database
+
+<h1 align="center">
+	<a href="https://starwars-database.vercel.app/" target="_blank">
+		<img src="https://github.com/swilcox21/starwars-database/blob/master/src/img/star-wars-blog.gif?raw=true" width="500"> 
+	</a>
+</h1>
+
+<h4 align="center">A Starwars Blog</h4>
+
+&nbsp; &nbsp; &nbsp; A Star Wars database containing in depth details on the various characters and planets from the popular Star Wars Franchise. A fully interactive front end web application, pulling information using API integration to display various information on multiple Star Wars characters and planets from a popular starwars API.
+
+##### Languages:
+&nbsp; &nbsp; &nbsp; React.js, javascript, RestAPIs, HTML, css, bootstrap, Github, Flux, API integration
+
+<h3>
+	Check it out!
+	<a href="https://starwars-database.vercel.app/" target="_blank">
+	<br>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://github.com/swilcox21/GIFs/blob/main/triple-down-arrows.gif?raw=true" height="50">
+	<br>
+	https://clean-earth-society.vercel.app/
+	</a>
+</h3>
+
+# Demo
+### Favorite
+<h1>
+	<a href="https://starwars-database.vercel.app/" target="_blank">
+		<img src="https://github.com/swilcox21/starwars-database/blob/master/src/img/star-wars-blog-favorites.gif?raw=true" width="500"> 
+	</a>
+</h1>
+
+### Learn More
+##### (shows details about the chosen character or planet)
+<h1>
+	<img src="https://github.com/swilcox21/starwars-database/blob/master/src/img/star-wars-blog-learnmore.gif?raw=true" width="500"> 
+</h1>
+
+
 # WebApp boilerplate with React JS
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/react-hello-webapp.git)
 
