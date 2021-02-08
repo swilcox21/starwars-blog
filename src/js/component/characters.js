@@ -9,11 +9,7 @@ export const Character = props => {
 	return (
 		<div className="myCardsContainer mx-3">
 			<div className="card" style={{ width: "18rem" }}>
-				<img
-					src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ10MwfkTB2i-K_R5g-L3voh__VSEXAv-l1KQ&usqp=CAU"
-					className="card-img-top"
-					alt="..."
-				/>
+				<img src={store.img[props.index]} className="card-img-top picturres" alt="..." />
 				<div className="card-body">
 					<h5 className="card-title">{props.char.name}</h5>
 					<div className="card-text">
@@ -54,5 +50,6 @@ export const Character = props => {
 };
 Character.propTypes = {
 	char: PropTypes.object,
-	key: PropTypes.number
+	key: PropTypes.number,
+	index: PropTypes.number
 };

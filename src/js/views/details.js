@@ -33,52 +33,56 @@ export class Details extends React.Component {
 		console.log("Results: ", this.state.results);
 		const { results } = this.state;
 		return (
-			<div className="container col-6">
-				<div className="row">
-					<div className="col-6">
-						<div className="text-center m-3">
-							<br />
-							<br />
-							<br />
-							<br />
-							<br />
-							<h1>{this.props.location.state.character.name}</h1>
+			<Context.Consumer>
+				{({ store }) => {
+					<div className="container col-6">
+						<div className="row">
+							<div className="col-6">
+								<div className="text-center m-3">
+									<br />
+									<br />
+									<br />
+									<br />
+									<br />
+									<h1>{this.props.location.state.character.name}</h1>
+								</div>
+							</div>
+							<div className="col-6">
+								<img src={store.img[this.props.index]} className="w-100" />
+							</div>
 						</div>
-					</div>
-					<div className="col-6">
-						<img src="https://loremflickr.com/320/240/starwars" className="w-100" />
-					</div>
-				</div>
-				<div className="row mx-1 details-background border-top border-warning">
-					<div className="col-12 d-flex justify-content-center justify-content-between text-warning text-center">
-						<div className="appearances p-2 m-3">
-							<h6>Name</h6>
-							<p>{this.props.location.state.character.name}</p>
-						</div>
-						<div className="affiliations  p-2 m-3 border-left border-warning">
-							<h6>Birth Year</h6>
-							<p className="text-center">{this.props.location.state.character.birth_year}</p>
-						</div>
-						<div className="locations p-2 m-3 border-left border-warning">
-							<h6>Gender</h6>
-							<p>{this.props.location.state.character.gender}</p>
-						</div>
-						<div className="gender p-2 m-3 border-left border-warning">
-							<h6>Height</h6>
-							<p>{this.props.location.state.character.height}</p>
-						</div>
-						<div className="dimensions p-2 m-3 border-left border-warning">
-							<h6>Skin Color</h6>
-							<p className="text-center">{this.props.location.state.character.skin_color}</p>
-						</div>
+						<div className="row mx-1 details-background border-top border-warning">
+							<div className="col-12 d-flex justify-content-center justify-content-between text-warning text-center">
+								<div className="appearances p-2 m-3">
+									<h6>Name</h6>
+									<p>{this.props.location.state.character.name}</p>
+								</div>
+								<div className="affiliations  p-2 m-3 border-left border-warning">
+									<h6>Birth Year</h6>
+									<p className="text-center">{this.props.location.state.character.birth_year}</p>
+								</div>
+								<div className="locations p-2 m-3 border-left border-warning">
+									<h6>Gender</h6>
+									<p>{this.props.location.state.character.gender}</p>
+								</div>
+								<div className="gender p-2 m-3 border-left border-warning">
+									<h6>Height</h6>
+									<p>{this.props.location.state.character.height}</p>
+								</div>
+								<div className="dimensions p-2 m-3 border-left border-warning">
+									<h6>Skin Color</h6>
+									<p className="text-center">{this.props.location.state.character.skin_color}</p>
+								</div>
 
-						<div className="species p-2 m-3 border-left border-warning">
-							<h6>Eye Color</h6>
-							<p>{this.props.location.state.character.eye_color}</p>
+								<div className="species p-2 m-3 border-left border-warning">
+									<h6>Eye Color</h6>
+									<p>{this.props.location.state.character.eye_color}</p>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-			</div>
+					</div>;
+				}}
+			</Context.Consumer>
 		);
 	}
 }
@@ -86,5 +90,6 @@ Details.propTypes = {
 	match: PropTypes.object,
 	location: PropTypes.object,
 	name: PropTypes.string,
-	results: PropTypes.object
+	results: PropTypes.object,
+	index: PropTypes.number
 };

@@ -46,12 +46,16 @@ export class Home extends React.Component {
 					<div className="wrapper">
 						<div className="container-fluid col-10 d-flex mt-5 scrollbar">
 							{store.characters
-								? store.characters.map((character, index) => <Character key={index} char={character} />)
+								? store.characters.map((character, index) => (
+										<Character key={index} char={character} index={index} />
+								  ))
 								: null}
 						</div>
 						<div className="container-fluid col-10 d-flex mt-5 scrollbar mb-5">
 							{store.planets
-								? store.planets.map((planet, index) => <Planet key={index} plan={planet} />)
+								? store.planets.map((planet, index) => (
+										<Planet key={index} plan={planet} index={index} />
+								  ))
 								: null}
 						</div>
 					</div>

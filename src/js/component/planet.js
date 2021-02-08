@@ -8,11 +8,7 @@ export const Planet = props => {
 	return (
 		<div className="myCardsContainer mx-3 mt-5">
 			<div className="card" style={{ width: "18rem" }}>
-				<img
-					src="https://media.moddb.com/images/groups/1/9/8071/Blockade.jpg"
-					className="card-img-top"
-					alt="..."
-				/>
+				<img src={store.imgP[props.index]} className="card-img-top picturres" alt="..." />
 				<div className="card-body">
 					<h5 className="card-title">{props.plan.name}</h5>
 					<p className="card-text">
@@ -53,5 +49,6 @@ export const Planet = props => {
 Planet.propTypes = {
 	plan: PropTypes.object,
 	key: PropTypes.number,
-	name: PropTypes.string
+	name: PropTypes.string,
+	index: PropTypes.number
 };
