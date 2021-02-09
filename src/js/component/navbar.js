@@ -34,15 +34,22 @@ export const NavBar = () => {
 					className={store.favorites.length > 0 ? "dropdown-menu " + show : "d-none"}
 					aria-labelledby="navbarDropdown">
 					{store.favorites.length > 0
-						? store.favorites.map((elm, index) => (
-								<li
-									key={index}
-									className="dropdown-item d-flex align-items-center justify-content-between">
-									<Link to={`/details/${index + 1}`}>{elm.name}</Link>
-									&nbsp;&nbsp;
-									<i className="fas fa-backspace" onClick={() => actions.deleteFromFavorites(elm)} />
-								</li>
-						  ))
+						? store.favorites.map((elm, index) => {
+								const charIndex = store.characters.findIndex(item => item.name == elm.name);
+								console.log(charIndex);
+								return (
+									<li
+										key={index}
+										className="dropdown-item d-flex align-items-center justify-content-between">
+										<Link to={`/details/${charIndex}`}>{elm.name}</Link>
+										&nbsp;&nbsp;
+										<i
+											className="fas fa-backspace"
+											onClick={() => actions.deleteFromFavorites(elm)}
+										/>
+									</li>
+								);
+						  })
 						: null}
 				</div>
 			</a>

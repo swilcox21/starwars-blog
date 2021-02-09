@@ -25,16 +25,8 @@ export const Planet = props => {
 						</p>
 					</p>
 					<div className="d-flex justify-content-between">
-						<Link
-							to={{
-								pathname: `/detailsTwo/${props.key + 1}`,
-								state: {
-									planet: props.plan
-								}
-							}}>
-							<button href="#" className="learnMore">
-								LEARN MORE
-							</button>
+						<Link to={`/detailsTwo/${props.index}`}>
+							<button className="learnMore">LEARN MORE</button>
 						</Link>
 						<button onClick={() => actions.addFavorites(props.plan.name)} className="btn heart">
 							<i className="far fa-heart" />

@@ -10,31 +10,33 @@ export class Details extends React.Component {
 			results: null
 		};
 	}
-	componentDidMount = () => {
-		//const { handle } = this.props.match.params;
-		const { character } = this.props.location.state;
-		this.setState({ results: character });
-		// fetch("https://swapi.co/api/people/" + this.props.match.params.id + "?format=json")
-		// 	.then(res => res.json())
-		// 	.then(response => {
-		// 		//console.log("Success:", typeof response);
-		// 		//	console.log(response);
-		// 		if (typeof response === typeof {}) {
-		// 			this.setState({ results: response });
-		// 			//console.log(this.state);
-		// 		} else {
-		// 			this.setState({ results: [] });
-		// 		}
-		// 	})
-		// 	.catch(error => console.error("Error:", error));
-	};
+	// componentDidMount = () => {
+	// 	//const { handle } = this.props.match.params;
+	// 	const { character } = this.props.location.state;
+	// 	this.setState({ results: character });
+	// 	// fetch("https://swapi.co/api/people/" + this.props.match.params.id + "?format=json")
+	// 	// 	.then(res => res.json())
+	// 	// 	.then(response => {
+	// 	// 		//console.log("Success:", typeof response);
+	// 	// 		//	console.log(response);
+	// 	// 		if (typeof response === typeof {}) {
+	// 	// 			this.setState({ results: response });
+	// 	// 			//console.log(this.state);
+	// 	// 		} else {
+	// 	// 			this.setState({ results: [] });
+	// 	// 		}
+	// 	// 	})
+	// 	// 	.catch(error => console.error("Error:", error));
+	// };
 	render() {
 		// if (!this.state.results) return <p className="p-5">Loading...</p>;
 		console.log("Results: ", this.state.results);
+		console.log("MATCH", this.props.match.params.theid);
+		const index = this.props.match.params.theid;
 		const { results } = this.state;
 		return (
 			<Context.Consumer>
-				{({ store }) => {
+				{({ store }) => (
 					<div className="container col-6">
 						<div className="row">
 							<div className="col-6">
@@ -44,44 +46,44 @@ export class Details extends React.Component {
 									<br />
 									<br />
 									<br />
-									<h1>{this.props.location.state.character.name}</h1>
+									<h1>{store.characters[index].name}</h1>
 								</div>
 							</div>
 							<div className="col-6">
-								<img src={store.img[this.props.index]} className="w-100" />
+								<img src={store.img[index]} className="" />
 							</div>
 						</div>
 						<div className="row mx-1 details-background border-top border-warning">
 							<div className="col-12 d-flex justify-content-center justify-content-between text-warning text-center">
 								<div className="appearances p-2 m-3">
 									<h6>Name</h6>
-									<p>{this.props.location.state.character.name}</p>
+									<p>{store.characters[index].name}</p>
 								</div>
 								<div className="affiliations  p-2 m-3 border-left border-warning">
 									<h6>Birth Year</h6>
-									<p className="text-center">{this.props.location.state.character.birth_year}</p>
+									<p className="text-center">{store.characters[index].birth_year}</p>
 								</div>
 								<div className="locations p-2 m-3 border-left border-warning">
 									<h6>Gender</h6>
-									<p>{this.props.location.state.character.gender}</p>
+									<p>{store.characters[index].gender}</p>
 								</div>
 								<div className="gender p-2 m-3 border-left border-warning">
 									<h6>Height</h6>
-									<p>{this.props.location.state.character.height}</p>
+									<p>{store.characters[index].height}</p>
 								</div>
 								<div className="dimensions p-2 m-3 border-left border-warning">
 									<h6>Skin Color</h6>
-									<p className="text-center">{this.props.location.state.character.skin_color}</p>
+									<p className="text-center">{store.characters[index].skin_color}</p>
 								</div>
 
 								<div className="species p-2 m-3 border-left border-warning">
 									<h6>Eye Color</h6>
-									<p>{this.props.location.state.character.eye_color}</p>
+									<p>{store.characters[index].eye_color}</p>
 								</div>
 							</div>
 						</div>
-					</div>;
-				}}
+					</div>
+				)}
 			</Context.Consumer>
 		);
 	}

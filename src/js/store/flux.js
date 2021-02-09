@@ -2,6 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			favorites: [],
+			characters: [],
+			planets: [],
 			img: {
 				"0": "https://i.pinimg.com/originals/9c/5d/08/9c5d08a88b7986777a9d883493254d5b.gif",
 				"1": "https://31.media.tumblr.com/a68749b75641373554f13f28c14cda04/tumblr_mscspsoHyV1sezoa7o1_250.gif",
