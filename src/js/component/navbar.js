@@ -30,18 +30,18 @@ export const NavBar = () => {
 					onClick={() => setClickedDropdown(!clickedDropDown)}>
 					FAVORITES <span className="badge badge-secondary">{store.favorites.length}</span>
 				</button>
+				9
 				<div
 					className={store.favorites.length > 0 ? "dropdown-menu " + show : "d-none"}
 					aria-labelledby="navbarDropdown">
 					{store.favorites.length > 0
-						? store.favorites.map((elm, index) => {
-								const charIndex = store.characters.findIndex(item => item.name == elm.name);
-								console.log(charIndex);
+						? store.favorites.map(elm => {
+								const type = elm.birth_year === undefined ? "planets" : "characters";
 								return (
 									<li
-										key={index}
+										key={elm.index + type}
 										className="dropdown-item d-flex align-items-center justify-content-between">
-										<Link to={`/details/${charIndex}`}>{elm.name}</Link>
+										<Link to={`/${type}/${elm.index}`}>{elm.name}</Link>
 										&nbsp;&nbsp;
 										<i
 											className="fas fa-backspace"

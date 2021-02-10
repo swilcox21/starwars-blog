@@ -29,9 +29,7 @@ export const Character = props => {
 						<Link to={`/details/${props.index}`}>
 							<button className="learnMore">LEARN MORE</button>
 						</Link>
-						<button
-							onClick={found ? null : () => actions.addFavorites(props.char.name)}
-							className="btn heart">
+						<button onClick={found ? null : () => actions.addFavorites(props.char)} className="btn heart">
 							<i className="far fa-heart" />
 						</button>
 					</div>

@@ -40,7 +40,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 						return resp.json();
 					})
-					.then(data => setStore({ characters: data.results }))
+					.then(data =>
+						setStore({
+							characters: data.results.map((e, i) => {
+								e.index = i;
+								return e;
+							})
+						})
+					)
 					.catch(function(error) {
 						console.log("Looks like there was a problem: \n", error);
 					});
@@ -54,17 +61,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 						return resp.json();
 					})
-					.then(data => setStore({ planets: data.results }))
+					.then(data =>
+						setStore({
+							planets: data.results.map((e, i) => {
+								e.index = i;
+								return e;
+							})
+						})
+					)
 					.catch(function(error) {
 						console.log("Looks like there was a problem: \n", error);
 					});
 			},
 
-			addFavorites: name => {
+			addFavorites: elm => {
 				let tempStore = getStore();
-				let newFavorite = { name: name };
-				tempStore.favorites.push(newFavorite);
-				setStore({ tempStore });
+				setStore({ favorites: tempStore.favorites.concat(elm) });
 			},
 
 			deleteFromFavorites: e => {

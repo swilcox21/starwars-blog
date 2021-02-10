@@ -28,7 +28,7 @@ export const Planet = props => {
 						<Link to={`/detailsTwo/${props.index}`}>
 							<button className="learnMore">LEARN MORE</button>
 						</Link>
-						<button onClick={() => actions.addFavorites(props.plan.name)} className="btn heart">
+						<button onClick={() => actions.addFavorites(props.plan)} className="btn heart">
 							<i className="far fa-heart" />
 						</button>
 					</div>
