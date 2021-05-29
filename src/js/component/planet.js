@@ -25,7 +25,7 @@ export const Planet = props => {
 						</p>
 					</p>
 					<div className="d-flex justify-content-between">
-						<Link to={`/detailsTwo/${props.index}`}>
+						<Link to={`/planets/${props.index}`}>
 							<button className="learnMore">LEARN MORE</button>
 						</Link>
 						<button onClick={() => actions.addFavorites(props.plan)} className="btn heart">
