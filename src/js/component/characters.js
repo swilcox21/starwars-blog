@@ -26,7 +26,7 @@ export const Character = props => {
 						</p>
 					</div>
 					<div className="d-flex justify-content-between">
-						<Link to={`/details/${props.index}`}>
+						<Link to={`/characters/${props.index}`}>
 							<button className="learnMore">LEARN MORE</button>
 						</Link>
 						<button onClick={found ? null : () => actions.addFavorites(props.char)} className="btn heart">
